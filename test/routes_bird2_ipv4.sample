@@ -40,3 +40,4 @@ BIRD 1.6.3 ready.
 	BGP.community: (65011,3) (9033,3251)
 	BGP.large_community: (9033, 65666, 12) (9033, 65666, 9)
 	BGP.ext_community: (rt, 42, 1234) (generic, 0x43000000, 0x1) 
+10.39.144.8/32       unreachable [s2r7node16 2020-03-30 19:24:34 from 10.38.151.48] * (100/-) [AS4200980000?]
