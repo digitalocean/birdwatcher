@@ -83,14 +83,14 @@ func TestParseProtocolShort(t *testing.T) {
 }
 
 func TestParseRoutesAllIpv4Bird1(t *testing.T) {
-	runTestForIpv4WithFile("routes_bird1_ipv4.sample", t)
+	runTestForIpv4WithFile("routes_bird1_ipv4.sample", 4, t)
 }
 
 func TestParseRoutesAllIpv4Bird2(t *testing.T) {
-	runTestForIpv4WithFile("routes_bird2_ipv4.sample", t)
+	runTestForIpv4WithFile("routes_bird2_ipv4.sample", 5, t)
 }
 
-func runTestForIpv4WithFile(file string, t *testing.T) {
+func runTestForIpv4WithFile(file string, numRoutes int, t *testing.T) {
 	f, err := openFile(file)
 	if err != nil {
 		t.Error(err)
@@ -103,8 +103,8 @@ func runTestForIpv4WithFile(file string, t *testing.T) {
 		t.Fatal("Error getting routes")
 	}
 
-	if len(routes) != 4 {
-		t.Fatal("Expected 4 routes but got ", len(routes))
+	if len(routes) != numRoutes {
+		t.Fatalf("Expected %v routes but got %v", numRoutes, len(routes))
 	}
 
 	assertRouteIsEqual(expectedRoute{
@@ -248,14 +248,14 @@ func runTestForIpv4WithFile(file string, t *testing.T) {
 }
 
 func TestParseRoutesAllIpv6Bird1(t *testing.T) {
-	runTestForIpv6WithFile("routes_bird1_ipv6.sample", t)
+	runTestForIpv6WithFile("routes_bird1_ipv6.sample", 3, t)
 }
 
 func TestParseRoutesAllIpv6Bird2(t *testing.T) {
-	runTestForIpv6WithFile("routes_bird2_ipv6.sample", t)
+	runTestForIpv6WithFile("routes_bird2_ipv6.sample", 4, t)
 }
 
-func runTestForIpv6WithFile(file string, t *testing.T) {
+func runTestForIpv6WithFile(file string, numRoutes int, t *testing.T) {
 	f, err := openFile(file)
 	if err != nil {
 		t.Error(err)
@@ -268,8 +268,8 @@ func runTestForIpv6WithFile(file string, t *testing.T) {
 		t.Fatal("Error getting routes")
 	}
 
-	if len(routes) != 3 {
-		t.Fatal("Expected 3 routes but got ", len(routes))
+	if len(routes) != numRoutes {
+		t.Fatalf("Expected %v routes but got %v", numRoutes, len(routes))
 	}
 
 	assertRouteIsEqual(expectedRoute{

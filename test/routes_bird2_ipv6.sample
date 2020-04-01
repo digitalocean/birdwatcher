@@ -32,3 +32,4 @@ BIRD 2.0.0 ready.
     BGP.community: (48821,2000) (48821,2100)
     BGP.large_community: (48821, 0, 2000) (48821, 0, 2100)
     BGP.ext_community: (unknown 0x4300, 0, 1)
+fd53:616d:6d60:7::1000/124 unreachable [s2r7node16 2020-03-30 19:24:34 from 10.38.151.48] * (100/-) [AS4200980000?]
